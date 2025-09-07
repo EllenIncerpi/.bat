@@ -1,0 +1,18 @@
+@echo off
+setlocal enabledelayedexpansion
+
+:: Gera a senha
+set "chars=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"
+set "password="
+set "length=12"
+
+:generate
+set /a "random_num=!random! %% 72"
+set "char=!chars:~%random_num%,1!"
+set "password=!password!!char!"
+set /a "length-=1"
+if !length! gtr 0 goto generate
+
+:: Exibe a senha gerada
+echo Senha Gerada: %password%
+pause
