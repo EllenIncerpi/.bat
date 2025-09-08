@@ -1,0 +1,7 @@
+@echo off
+taskkill /f /im AnyDesk.exe
+taskkill /f /im AnyDesk.exe
+del /f /q "c:\ProgramData\AnyDesk\service.conf"
+del /f /q "c:\ProgramData\AnyDesk\system.conf"
+echo Licença do AnyDesk resetada!
+pause
